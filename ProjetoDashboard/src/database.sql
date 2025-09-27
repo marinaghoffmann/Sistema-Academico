@@ -99,8 +99,8 @@ VALUES ('123.456.789-01', 'Izabel Malheiros', 'Rua das Acácias', 415, '31045-21
        ('890.123.456-78', 'Paulo Wendel', 'Rua das Palmeiras', 664, '38023-090'),
        ('901.234.567-89', 'Davi Morato', 'Rua Frei Caneca', 275, '39034-200'),
        ('012.345.678-90', 'Ulisses Muliterno', 'Rua Santa Cruz', 842, '40045-310'),
-       ('135.246.357-91', 'Luiza Xavier', 'Rua Monte Castelo', 129, '41056-420'),
-       ('246.357.468-02', 'Marina Yanes', 'Rua Sete de Setembro', 903, '42067-530'),
+       ('135.246.356-91', 'Luiza Xavier', 'Rua Monte Castelo', 129, '41056-420'),
+       ('246.437.468-02', 'Marina Yanes', 'Rua Sete de Setembro', 903, '42067-530'),
        ('357.468.579-13', 'Natan Zico', 'Rua José Bonifácio', 311, '43078-640'),
        ('468.579.680-24', 'Otavio Alves', 'Rua Benjamin Constant', 742, '44089-750'),
        ('579.680.791-35', 'Patricia Borges', 'Rua Santo Antônio', 258, '45090-860'),
@@ -111,14 +111,14 @@ VALUES ('123.456.789-01', 'Izabel Malheiros', 'Rua das Acácias', 415, '31045-21
        ('024.135.246-80', 'Vitor Guimarães', 'Rua Dom Bosco', 188, '50056-310'),
        ('135.246.357-91', 'Wanda Henriques', 'Rua São João', 594, '51067-420'),
        ('246.357.468-02', 'Xena Igor', 'Rua Projetada Leste', 401, '52078-530'),
-       ('357.468.579-13', 'Yasmin Jorge', 'Rua Getúlio Vargas', 222, '53089-640'),
-       ('468.579.680-24', 'Zeze Kilber', 'Rua das Flores', 845, '54090-750'),
-       ('579.680.791-35', 'Alana Lopes', 'Rua Padre Anchieta', 503, '55012-860'),
+       ('357.468.579-17', 'Yasmin Jorge', 'Rua Getúlio Vargas', 222, '53089-640'),
+       ('487.579.680-24', 'Zeze Kilber', 'Rua das Flores', 845, '54090-750'),
+       ('579.770.791-35', 'Alana Lopes', 'Rua Padre Anchieta', 503, '55012-860'),
        ('660.791.102-46', 'Bianca Mendes', 'Rua São Pedro', 310, '56023-970'),
-       ('791.802.913-57', 'Carlos Nogueira', 'Avenida Tiradentes', 775, '57034-080'),
-       ('802.913.024-68', 'Dora Ornelas', 'Rua José do Patrocínio', 492, '58045-190'),
-       ('913.024.135-79', 'Eduardo Pires', 'Rua da Liberdade', 156, '59056-200'),
-       ('024.135.246-80', 'Fatima Queiroz', 'Rua Marechal Hermes', 689, '60067-310');
+       ('791.982.913-57', 'Carlos Nogueira', 'Avenida Tiradentes', 775, '57034-080'),
+       ('802.934.024-68', 'Dora Ornelas', 'Rua José do Patrocínio', 492, '58045-190'),
+       ('913.454.135-79', 'Eduardo Pires', 'Rua da Liberdade', 156, '59056-200'),
+       ('024.345.246-80', 'Fatima Queiroz', 'Rua Marechal Hermes', 689, '60067-310');
 
 
 
@@ -186,21 +186,16 @@ VALUES ('Matemática', 60, 1, 1),
        ('Psicologia', 50, 27, 27), 
        ('Contabilidade', 60, 28, 28),
        ('Marketing Digital', 45, 29, 29), 
-       ('Gestão de Projetos', 60, 30, 30), 
-       ('Ética', 65, 31, 31), 
-       ('Anatomia', 40, 32, 32),
-       ('Espanhol', 50, 33, 33), 
-       ('Programação Orientada à Objetos', 55, 34, 34), 
-       ('Empreendedorismo', 60, 35, 35), 
-       ('Infraestrutura de Software', 70, 36, 36),
-       ('Infraestrutura de Hardware', 80, 37, 37), 
-       ('Biologia Marítma', 40, 38, 38), 
-       ('Libras', 60, 39, 39);
+       ('Gestão de Projetos', 60, 30, 30); 
 
 
-DELETE FROM Aluno WHERE Id_Aluno = 2;
+DELETE FROM Aluno WHERE Id_Aluno = 13;
+
+DELETE FROM Professor WHERE Id_Prof = 15;
 
 UPDATE Aluno SET Media = 9.0 WHERE Nome = 'Marina Hoffmann';
+
+UPDATE Disciplina SET Carga_Horaria = 100 WHERE Nome = 'Cálculo';
 
 SELECT * FROM Aluno;
 
