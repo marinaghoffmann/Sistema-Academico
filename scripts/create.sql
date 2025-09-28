@@ -1,0 +1,47 @@
+CREATE DATABASE Escola;
+USE Escola;
+
+CREATE TABLE Aluno (
+    Id_Aluno INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255) NOT NULL,
+    Sexo CHAR(1) CHECK (Sexo IN ('M','F')),
+    Idade INT CHECK (Idade >= 16),
+    Num INT,
+    CEP VARCHAR(9),
+    Rua VARCHAR(255),	
+    Media DECIMAL(4,2),
+    Frequencia DECIMAL(5,2) DEFAULT 100 CHECK (Frequencia BETWEEN 0 AND 100),
+    Monitor INT NULL,
+    Monitorado INT NULL,
+    FOREIGN KEY (Monitor) REFERENCES Aluno(Id_Aluno)
+        ON DELETE SET NULL ON UPDATE CASCADE,
+    FOREIGN KEY (Monitorado) REFERENCES Aluno(Id_Aluno)
+        ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Professor (
+    Id_Prof INT PRIMARY KEY AUTO_INCREMENT,
+    CPF VARCHAR(14) UNIQUE,
+    Nome VARCHAR(255) NOT NULL,
+    Rua VARCHAR(255),
+    Num INT,
+    CEP VARCHAR(9)
+);
+
+CREATE TABLE Turma (
+    Id_Turma INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100) NOT NULL,
+    Ano INT NOT NULL
+);
+
+CREATE TABLE Disciplina (
+    Id_Disc INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(255) NOT NULL,
+    Carga_Horaria INT DEFAULT 40 CHECK (Carga_Horaria BETWEEN 20 AND 120),
+    Id_Aluno INT,
+    Id_Turma INT,
+    FOREIGN KEY (Id_Aluno) REFERENCES Aluno(Id_Aluno)
+        ON DELETE SET NULL,
+    FOREIGN KEY (Id_Turma) REFERENCES Turma(Id_Turma)
+        ON DELETE SET NULL
+);
